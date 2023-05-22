@@ -1,16 +1,25 @@
-﻿namespace ModulosCompromissoPlataformaWinFormsApp1.Contatos
+﻿using ModulosCompromissoPlataformaWinFormsApp1.Compartilhado;
+
+namespace ModulosCompromissoPlataformaWinFormsApp1.Contatos
 {
-    public class Contato
+    public class Contato : EntidaddeBase
     {
         public int id;
         public string nome;
+        public string telefone;
+        public string email;
+        public string cargo;
         public string empresa;
 
-        public Contato(int id, string nome, string empresa)
+        public Contato( string nome,string telefone, string email,
+                       string cargo, string empresa)
         {
-            this.id = id;
+           
             this.nome = nome;
             this.empresa = empresa;
+            this.telefone = telefone;
+            this.email = email;
+            this.cargo = cargo;
         }
 
         public override string ToString()

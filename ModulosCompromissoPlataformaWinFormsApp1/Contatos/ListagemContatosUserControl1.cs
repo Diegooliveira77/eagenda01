@@ -12,20 +12,23 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Contatos
 {
     public partial class ListagemContatosUserControl1 : UserControl
     {
-        List<Contato> contatos = new List<Contato>();
+       
         public ListagemContatosUserControl1()
         {
             InitializeComponent();
-
-            contatos.Add(new Contato(1, "diego", "Academia do Programador"));
-
-            contatos.Add(new Contato(2, "bruna", "Personal"));
-
+                                    
+        }
+        public void AtualizarRegistros(List<Contato> contatos)
+        {
+            listContatos.Items.Clear();
             foreach (Contato item in contatos)
             {
                 listContatos.Items.Add(item);
             }
-            
+        }
+        public Contato ObterContatoSelecionado()
+        {
+            return (Contato)listContatos.SelectedItem;
         }
     }
 }

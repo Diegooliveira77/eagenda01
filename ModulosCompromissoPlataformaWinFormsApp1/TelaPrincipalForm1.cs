@@ -7,6 +7,7 @@ namespace ModulosCompromissoPlataformaWinFormsApp1
     public partial class TelaPrincipalForm1 : Form
     {
         private ControloadorBase controlador;
+        private RepositorioContato repositorioContato = new RepositorioContato();
 
         public TelaPrincipalForm1()
         {
@@ -17,27 +18,38 @@ namespace ModulosCompromissoPlataformaWinFormsApp1
 
         private void contatosMenuItem_Click(object sender, EventArgs e)
         {
-            lblTipoCadastro.Text = "Cadastro de Contatos";
 
-            controlador = new ControladorContato();
 
-            ConfigurarToolTips(controlador);
+            controlador = new ControladorContato(repositorioContato);
 
-            ConfigurarListagem(controlador);
+            ConfigurarTelaPrincipal(controlador);
+
+
         }
 
         private void tarefasMenuItem_Click(object sender, EventArgs e)
         {
 
-            lblTipoCadastro.Text = "Cadastro de Tarefas";
+
 
             controlador = new ControladorTarefa();
 
+            ConfigurarTelaPrincipal(controlador);
+
+
+
+        }
+
+        private void ConfigurarTelaPrincipal(ControloadorBase controladorBase)
+        {
+            lblTipoCadastro.Text = controladorBase.ObterTipoCadastro();
+
+
+
+
             ConfigurarToolTips(controlador);
 
-
             ConfigurarListagem(controlador);
-
         }
 
         private void ConfigurarListagem(ControloadorBase controloadorBase)
@@ -72,6 +84,26 @@ namespace ModulosCompromissoPlataformaWinFormsApp1
         private void TelaPrincipalForm1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bpnEditar_Click(object sender, EventArgs e)
+        {
+            controlador.Editar();
+        }
+
+        private void bpnExcluir_Click(object sender, EventArgs e)
+        {
+            controlador.Excluir();
+        }
+
+        private void lblTipoCadastro_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

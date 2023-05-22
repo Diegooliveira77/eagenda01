@@ -16,9 +16,14 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Compartilhado
 
         public abstract void Inserir();
 
-        public abstract UserControl ObterListagem();
-        
+        public abstract void Editar();
 
-        
+        public abstract void Excluir();
+
+        public abstract UserControl ObterListagem();
+
+
+        public abstract string ObterTipoCadastro();
+      
     }
 }

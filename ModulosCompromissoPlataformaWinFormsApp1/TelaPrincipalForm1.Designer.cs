@@ -70,24 +70,25 @@
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             cadastroToolStripMenuItem.Size = new Size(66, 20);
             cadastroToolStripMenuItem.Text = "Cadastro";
+            cadastroToolStripMenuItem.Click += cadastroToolStripMenuItem_Click;
             // 
             // contatosMenuItem
             // 
             contatosMenuItem.Name = "contatosMenuItem";
-            contatosMenuItem.Size = new Size(180, 22);
+            contatosMenuItem.Size = new Size(154, 22);
             contatosMenuItem.Text = "Contatos";
             contatosMenuItem.Click += contatosMenuItem_Click;
             // 
             // compromissosMenuItem
             // 
             compromissosMenuItem.Name = "compromissosMenuItem";
-            compromissosMenuItem.Size = new Size(180, 22);
+            compromissosMenuItem.Size = new Size(154, 22);
             compromissosMenuItem.Text = "Compromissos";
             // 
             // tarefasMenuItem
             // 
             tarefasMenuItem.Name = "tarefasMenuItem";
-            tarefasMenuItem.Size = new Size(180, 22);
+            tarefasMenuItem.Size = new Size(154, 22);
             tarefasMenuItem.Text = "Tarefas";
             tarefasMenuItem.Click += tarefasMenuItem_Click;
             // 
@@ -95,7 +96,7 @@
             // 
             despesasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { despesasMenuItem1, categoriasMenuItem });
             despesasToolStripMenuItem.Name = "despesasToolStripMenuItem";
-            despesasToolStripMenuItem.Size = new Size(180, 22);
+            despesasToolStripMenuItem.Size = new Size(154, 22);
             despesasToolStripMenuItem.Text = "Despesas";
             // 
             // despesasMenuItem1
@@ -163,6 +164,7 @@
             bpnEditar.Size = new Size(42, 42);
             bpnEditar.Text = "toolStripButton2";
             bpnEditar.ToolTipText = "Editar";
+            bpnEditar.Click += bpnEditar_Click;
             // 
             // bpnExcluir
             // 
@@ -175,6 +177,7 @@
             bpnExcluir.Size = new Size(42, 42);
             bpnExcluir.Text = "toolStripButton3";
             bpnExcluir.ToolTipText = "Excluir";
+            bpnExcluir.Click += bpnExcluir_Click;
             // 
             // toolStripSeparator1
             // 
@@ -186,6 +189,7 @@
             lblTipoCadastro.Name = "lblTipoCadastro";
             lblTipoCadastro.Size = new Size(75, 42);
             lblTipoCadastro.Text = "tipoCadastro";
+            lblTipoCadastro.Click += lblTipoCadastro_Click;
             // 
             // panelRegistro
             // 

@@ -16,6 +16,11 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Modulo_Tarefa
 
         public override string ToolTipExcluir { get { return "Excluir Tarefa"; } }
 
+        public override void Editar()
+        {
+            throw new NotImplementedException();
+        }
+
         public override void Inserir()
         {
             TelaTarefaForm1 telaTarefa = new TelaTarefaForm1();
@@ -26,6 +31,11 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Modulo_Tarefa
         public override UserControl ObterListagem()
         {
             return new ListagemTarefaControl();
+        }
+
+        public override string ObterTipoCadastro()
+        {
+            return "Cadastro  de Tarefas";
         }
     }
 }
