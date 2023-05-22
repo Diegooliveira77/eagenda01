@@ -21,6 +21,11 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Modulo_Tarefa
             throw new NotImplementedException();
         }
 
+        public override void Excluir()
+        {
+            throw new NotImplementedException();
+        }
+
         public override void Inserir()
         {
             TelaTarefaForm1 telaTarefa = new TelaTarefaForm1();
