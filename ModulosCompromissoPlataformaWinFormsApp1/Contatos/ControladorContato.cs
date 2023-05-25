@@ -14,7 +14,8 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Contatos
         private ListagemContatosUserControl1 listagemContato;
         public ControladorContato(RepositorioContato repositorioContato) 
         {
-            RepositorioContato = repositorioContato;
+
+           this.repositorioContato = repositorioContato;
         }
         public override string ToolTipInserir { get { return "inserir novo contato"; } }
 
@@ -22,7 +23,7 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Contatos
 
         public override string ToolTipExcluir { get { return "Excluir contato"; } }
 
-        public RepositorioContato RepositorioContato { get; }
+      
 
         public override void Editar()
         {
@@ -54,6 +55,13 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Contatos
             }
         }
 
+        private void CarregarContatos()
+        {
+            List<Contato> contatos = repositorioContato.SelecionarTodos();
+           listagemContato.AtualizarRegistros(contatos);
+        }
+
+
         public override void Inserir()
         {
             TelaContatoForm1 telaContato = new TelaContatoForm1();
@@ -65,6 +73,10 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Contatos
                 Contato contato = telaContato.Contato;
 
                 repositorioContato.Inserir(contato);
+
+                CarregarContatos();
+
+                
             }
         }
 

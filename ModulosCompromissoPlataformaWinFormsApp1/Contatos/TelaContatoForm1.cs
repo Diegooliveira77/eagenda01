@@ -12,7 +12,7 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Contatos
 {
     public partial class TelaContatoForm1 : Form
     {
-        private Contato novoContato;
+        private Contato contato;
         public TelaContatoForm1()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Contatos
             }
             get
             {
-                return novoContato;
+                return contato;
             }
         }
         private void bpnGravar_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Contatos
 
             string empresa = txtEmpresa.Text;
 
-            Contato novoContato = new Contato(nome, telefone, email, cargo, empresa);
+            contato = new Contato(nome, telefone, email, cargo, empresa);
 
             if (txtId.Text != "0")
                 Contato.id = Convert.ToInt32(txtId.Text);

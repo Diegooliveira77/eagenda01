@@ -8,18 +8,15 @@ namespace ModulosCompromissoPlataformaWinFormsApp1
     {
         private ControloadorBase controlador;
         private RepositorioContato repositorioContato = new RepositorioContato();
-
+       
         public TelaPrincipalForm1()
         {
             InitializeComponent();
         }
-
-
-
+      
         private void contatosMenuItem_Click(object sender, EventArgs e)
         {
-
-
+          
             controlador = new ControladorContato(repositorioContato);
 
             ConfigurarTelaPrincipal(controlador);
@@ -29,8 +26,8 @@ namespace ModulosCompromissoPlataformaWinFormsApp1
 
         private void tarefasMenuItem_Click(object sender, EventArgs e)
         {
-
-
+            
+            
 
             controlador = new ControladorTarefa();
 
@@ -103,7 +100,12 @@ namespace ModulosCompromissoPlataformaWinFormsApp1
 
         private void lblTipoCadastro_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void compromissosMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
