@@ -34,7 +34,7 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Contatos
 
         public override string ToString()
         {
-            return "Id" + id + "," + nome + "," + empresa;
+            return "Id" + id + "," + nome + "," + empresa + "," + telefone + "," + email + "," + cargo;
         }
 
         public override string[] Validar()

@@ -38,6 +38,7 @@
             categoriasMenuItem = new ToolStripMenuItem();
             relatoriosToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
+            labelRodaPe = new ToolStripStatusLabel();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             toolStrip1 = new ToolStrip();
             bpnInserir = new ToolStripButton();
@@ -46,11 +47,15 @@
             toolStripSeparator1 = new ToolStripSeparator();
             lblTipoCadastro = new ToolStripLabel();
             panelRegistro = new Panel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             menuStrip2 = new MenuStrip();
+            toolStripSeparator2 = new ToolStripSeparator();
+            bpnFiltrar = new ToolStripButton();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
+            panelRegistro.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -70,26 +75,25 @@
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             cadastroToolStripMenuItem.Size = new Size(66, 20);
             cadastroToolStripMenuItem.Text = "Cadastro";
-            cadastroToolStripMenuItem.Click += cadastroToolStripMenuItem_Click;
             // 
             // contatosMenuItem
             // 
             contatosMenuItem.Name = "contatosMenuItem";
-            contatosMenuItem.Size = new Size(180, 22);
+            contatosMenuItem.Size = new Size(154, 22);
             contatosMenuItem.Text = "Contatos";
             contatosMenuItem.Click += contatosMenuItem_Click;
             // 
             // compromissosMenuItem
             // 
             compromissosMenuItem.Name = "compromissosMenuItem";
-            compromissosMenuItem.Size = new Size(180, 22);
+            compromissosMenuItem.Size = new Size(154, 22);
             compromissosMenuItem.Text = "Compromissos";
             compromissosMenuItem.Click += compromissosMenuItem_Click;
             // 
             // tarefasMenuItem
             // 
             tarefasMenuItem.Name = "tarefasMenuItem";
-            tarefasMenuItem.Size = new Size(180, 22);
+            tarefasMenuItem.Size = new Size(154, 22);
             tarefasMenuItem.Text = "Tarefas";
             tarefasMenuItem.Click += tarefasMenuItem_Click;
             // 
@@ -97,7 +101,7 @@
             // 
             despesasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { despesasMenuItem1, categoriasMenuItem });
             despesasToolStripMenuItem.Name = "despesasToolStripMenuItem";
-            despesasToolStripMenuItem.Size = new Size(180, 22);
+            despesasToolStripMenuItem.Size = new Size(154, 22);
             despesasToolStripMenuItem.Text = "Despesas";
             // 
             // despesasMenuItem1
@@ -120,22 +124,28 @@
             // 
             // statusStrip1
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
+            statusStrip1.Items.AddRange(new ToolStripItem[] { labelRodaPe, toolStripStatusLabel1 });
             statusStrip1.Location = new Point(0, 428);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(799, 22);
             statusStrip1.TabIndex = 1;
             statusStrip1.Text = "statusStrip1";
             // 
+            // labelRodaPe
+            // 
+            labelRodaPe.Name = "labelRodaPe";
+            labelRodaPe.Size = new Size(44, 17);
+            labelRodaPe.Text = "rodape";
+            // 
             // toolStripStatusLabel1
             // 
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(118, 17);
-            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(32, 17);
+            toolStripStatusLabel1.Text = "teste";
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { bpnInserir, bpnEditar, bpnExcluir, toolStripSeparator1, lblTipoCadastro });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { bpnInserir, bpnEditar, bpnExcluir, toolStripSeparator1, bpnFiltrar, toolStripSeparator2, lblTipoCadastro });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(799, 45);
@@ -190,17 +200,23 @@
             lblTipoCadastro.Name = "lblTipoCadastro";
             lblTipoCadastro.Size = new Size(75, 42);
             lblTipoCadastro.Text = "tipoCadastro";
-            lblTipoCadastro.Click += lblTipoCadastro_Click;
             // 
             // panelRegistro
             // 
             panelRegistro.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelRegistro.BorderStyle = BorderStyle.FixedSingle;
-            panelRegistro.Location = new Point(11, 62);
+            panelRegistro.Controls.Add(flowLayoutPanel1);
+            panelRegistro.Location = new Point(10, 62);
             panelRegistro.Name = "panelRegistro";
             panelRegistro.Size = new Size(776, 363);
             panelRegistro.TabIndex = 3;
-            panelRegistro.Paint += panelRegistro_Paint;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Location = new Point(569, 179);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(200, 100);
+            flowLayoutPanel1.TabIndex = 0;
             // 
             // menuStrip2
             // 
@@ -209,6 +225,24 @@
             menuStrip2.Size = new Size(799, 24);
             menuStrip2.TabIndex = 4;
             menuStrip2.Text = "menuStrip2";
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 45);
+            // 
+            // bpnFiltrar
+            // 
+            bpnFiltrar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            bpnFiltrar.Image = Properties.Resources.delete;
+            bpnFiltrar.ImageScaling = ToolStripItemImageScaling.None;
+            bpnFiltrar.ImageTransparentColor = Color.Magenta;
+            bpnFiltrar.Name = "bpnFiltrar";
+            bpnFiltrar.Padding = new Padding(7);
+            bpnFiltrar.Size = new Size(42, 42);
+            bpnFiltrar.Text = "toolStripButton3";
+            bpnFiltrar.ToolTipText = "Excluir";
+            bpnFiltrar.Click += bpnFiltrar_Click;
             // 
             // TelaPrincipalForm1
             // 
@@ -224,13 +258,13 @@
             Name = "TelaPrincipalForm1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "eAgenda1.0";
-            Load += TelaPrincipalForm1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
+            panelRegistro.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -247,7 +281,7 @@
         private ToolStripMenuItem despesasMenuItem1;
         private ToolStripMenuItem categoriasMenuItem;
         private StatusStrip statusStrip1;
-        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel labelRodaPe;
         private ToolStrip toolStrip1;
         private ToolStripButton bpnInserir;
         private ToolStripButton bpnEditar;
@@ -257,5 +291,9 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripLabel lblTipoCadastro;
         private MenuStrip menuStrip2;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private ToolStripButton bpnFiltrar;
+        private ToolStripSeparator toolStripSeparator2;
     }
 }

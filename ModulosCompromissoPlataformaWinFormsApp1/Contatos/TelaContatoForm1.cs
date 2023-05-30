@@ -16,6 +16,7 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Contatos
         public TelaContatoForm1()
         {
             InitializeComponent();
+            
         }
         public Contato Contato
         {
@@ -46,6 +47,18 @@ namespace ModulosCompromissoPlataformaWinFormsApp1.Contatos
             string empresa = txtEmpresa.Text;
 
             contato = new Contato(nome, telefone, email, cargo, empresa);
+
+            string[] erros = contato.Validar();
+
+            if (erros.Length > 0 )
+            {
+                TelaPrincipalForm1 principal = TelaPrincipalForm1.Instancia;
+
+                principal.AtualizarRodape(erros[0]);
+
+                DialogResult = DialogResult.None;
+                return;
+            }
 
             if (txtId.Text != "0")
                 Contato.id = Convert.ToInt32(txtId.Text);
